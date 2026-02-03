@@ -9,10 +9,9 @@ function convertToRoman(num) {
     6: ['I', 1]
   };
 
-  let result = '';
+  let result = "";
 
-  // handle subtractive cases first
-  const subtractives = [
+  const special = [
     ['CM', 900],
     ['CD', 400],
     ['XC', 90],
@@ -21,14 +20,13 @@ function convertToRoman(num) {
     ['IV', 4]
   ];
 
-  for (let [sym, val] of subtractives) {
-    while (num >= val) {
-      result += sym;
-      num -= val;
+  for (let i = 0; i < special.length; i++) {
+    while (num >= special[i][1]) {
+      result += special[i][0];
+      num -= special[i][1];
     }
   }
 
-  // handle normal symbols from given object
   for (let key in obj) {
     let symbol = obj[key][0];
     let value = obj[key][1];

@@ -1,7 +1,7 @@
 function convertToRoman(num) {
   if (num === 0) return "";
 
-  const values = [
+  const symbols = [
     ["M", 1000],
     ["CM", 900],
     ["D", 500],
@@ -19,10 +19,10 @@ function convertToRoman(num) {
 
   let result = "";
 
-  for (let i = 0; i < values.length; i++) {
-    while (num >= values[i][1]) {
-      result += values[i][0];
-      num -= values[i][1];
+  for (let i = 0; i < symbols.length; i++) {
+    while (num >= symbols[i][1]) {
+      result += symbols[i][0];
+      num -= symbols[i][1];
     }
   }
 

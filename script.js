@@ -25,6 +25,13 @@ function convertToRoman(num) {
       num -= symbols[i][1];
     }
   }
+	convertToRoman(14);   // "XIV"
+convertToRoman(798);  // "DCCXCVIII"
+convertToRoman(0);    // ""
+
 
   return result;
 }
+convertToRoman(14);   // "XIV"
+convertToRoman(798);  // "DCCXCVIII"
+convertToRoman(0);    // ""
